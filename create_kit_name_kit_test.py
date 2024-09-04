@@ -32,31 +32,31 @@ def negative_assert_no_name(kit_data):
 
 #Función para crear un kit con una letra
 def test_create_kit_1_letter_get_success_response():
-    positive_assert("a")
+    positive_assert(data.one_letter)
 
 #Función para crear un kit con 511 letras
 def test_create_kit_511_letter_get_success_response():
-    positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
+    positive_assert(data.upper_limit)
 
 #Función para crear un kit sin caracteres
 def test_create_kit_no_characters_get_error_response():
-    negative_assert("")
+    negative_assert(data.no_characters)
 
 #Función para crear un kit con 512 letras
 def test_create_kit_512_letter_get_error_response():
-    negative_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD")
+    negative_assert(data.exceeded_limit)
 
 #Función para crear un kit con carácteres especiales
 def test_create_kit_special_characters_get_success_response():
-    positive_assert("&/(#%&/")
+    positive_assert(data.special_characters)
 
 #Función para crear un kit con espacios
 def test_create_kit_blank_spaces_allowed_get_success_response():
-    positive_assert("A Aaa")
+    positive_assert(data.string_with_blank_space)
 
 #Función para crear un kit con números en string
 def test_create_kit_numbers_allowed_get_success_response():
-    positive_assert("123")
+    positive_assert(data.numbers_string)
 
 #Función para crear un kit sin el campo nombre
 def test_create_kit_no_name_on_the_request_get_error_response():
@@ -66,4 +66,4 @@ def test_create_kit_no_name_on_the_request_get_error_response():
 
 #Función para crear un kit con data tipo número
 def test_create_kit_different_data_type_not_allowed_get_error_response():
-    negative_assert(123)
+    negative_assert(data.numbers)
