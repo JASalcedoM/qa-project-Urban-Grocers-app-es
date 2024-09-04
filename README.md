@@ -31,7 +31,7 @@
 
 ### Ejecución de las pruebas
 
-* pytest ruta/del/archivo.py desde la terminal
+* pytest ruta/del/create_kit_name_kit_test.py desde la terminal
 
 
   
